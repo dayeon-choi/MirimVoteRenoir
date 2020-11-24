@@ -7,6 +7,23 @@
     android:gravity="center"
     android:stretchColumns="0"
     tools:context=".ResultActivity">
+    <TextView
+        android:id="@+id/result_imgName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="선택된 그림 이름"
+        />
+    <ImageView
+        android:id="@+id/result_img"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/r01"
+        />
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
