@@ -27,9 +27,17 @@ public class ResultActivity extends AppCompatActivity {
 
         int[] textIds={R.id.text1,R.id.text2,R.id.text3,R.id.text4,R.id.text5,R.id.text6,R.id.text7,R.id.text8,R.id.text9};
         int[] ratingIds={R.id.rating_bar1,R.id.rating_bar2,R.id.rating_bar3,R.id.rating_bar4,R.id.rating_bar5,R.id.rating_bar6,R.id.rating_bar7,R.id.rating_bar8,R.id.rating_bar9};
-        int[] countMax={0,0,0,0,0,0,0,0,0};
-        int[] imageFileId={R.id.img1,R.id.img2,R.id.img3,R.id.img4,R.id.img5,R.id.img6,R.id.img7,R.id.img8,R.id.img9};
+        int[] imageFileId = {R.drawable.r01, R.drawable.r02, R.drawable.r03, R.drawable.r04, R.drawable.r05, R.drawable.r06, R.drawable.r07, R.drawable.r08, R.drawable.r09};
+
         int max=0; int maxIndex=0;
+
+        //이 부분 문제 해결하기
+        for (int i=0;i<imgNames.length;i++){
+            if(voteCount[i]>max){
+                max=voteCount[i];
+                maxIndex=i;
+            }
+        }
 
         for (int i=0;i<imgNames.length;i++){
             textVs[i]=findViewById(textIds[i]);
@@ -37,19 +45,12 @@ public class ResultActivity extends AppCompatActivity {
 
             textVs[i].setText(imgNames[i]);
             ratingBars[i].setRating(voteCount[i]);
-            countMax[i]=voteCount[i];
         }
 
-        //이 부분 문제 해결하기
-        for (int i=0;i<countMax.length;i++){
-            if(countMax[i]>max){
-                max=countMax[i];
-                maxIndex=i;
-            }
-        }
+
 
         TextView textView=findViewById(R.id.result_imgName);
-        textView.setText(textIds[maxIndex]);
+        textView.setText(imgNames[maxIndex]);
         ImageView imageView=findViewById(R.id.result_img);
         imageView.setImageResource(imageFileId[maxIndex]);
 
