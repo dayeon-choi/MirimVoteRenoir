@@ -40,6 +40,7 @@ public class ResultActivity extends AppCompatActivity {
             countMax[i]=voteCount[i];
         }
 
+        //이 부분 문제 해결하기
         for (int i=0;i<countMax.length;i++){
             if(countMax[i]>max){
                 max=countMax[i];
